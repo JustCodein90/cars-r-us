@@ -1,33 +1,40 @@
 const database = {
     paintColor: [
-        id = 1, color = "Silver", price = ,
-        id = 2, color = "Midnight Blue", price = ,
-        id = 3, color = "Firebrick Red", price = ,
-        id = 4, color = "Spring Green", price = ,
+        {
+        id: 1, color: "Silver", price: 200,
+        id: 2, color: "Midnight Blue", price: 400,
+        id: 3, color: "Firebrick Red", price: 800,
+        id: 4, color: "Spring Green", price: 600,
+        }
     ],
 
     interior: [
-        id = 1, cloth = "Beige Fabric", price = ,
-        id = 2, cloth = "Charcoal Fabric", price = ,
-        id = 3, cloth = "White Leather", price = ,
-        id = 4, cloth = "Black Leather", price = ,
+        {
+        id: 1, cloth: "Beige Fabric", price: 200,
+        id: 2, cloth: "Charcoal Fabric", price: 400,
+        id: 3, cloth: "White Leather", price: 900,
+        id: 4, cloth: "Black Leather", price: 700,
+        }
     ],
 
     tech: [
-        id = 1, package = "Basic Package", price = ,
-        id = 2, package = "Navigation Package", price = ,
-        id = 3, package = "Visibility Package", price = ,
-        id = 4, package = "Ultra Package", price = ,
-
+        {
+        id: 1, pack: "Basic Package", price: 1125,
+        id: 2, pack: "Navigation Package", price: 2500,
+        id: 3, pack: "Visibility Package", price: 3740,
+        id: 4, pack: "Ultra Package", price: 5000,
+        }
     ],
 
     wheels: [
-        id = 1, type = "17-inch Pair Radial", price = ,
-        id = 2, type = "17-inch Pair Radial Black", price = ,
-        id = 3, type = "18-inch Pair Spoke Silver", price = ,
-        id = 4, type = "18-inch Pair Spoke Black", price = ,
-
-    ]
+        {
+        id: 1, type: "17-inch Pair Radial", price: 500,
+        id: 2, type: "17-inch Pair Radial Black", price: 700,
+        id: 3, type: "18-inch Pair Spoke Silver", price: 900,
+        id: 4, type: "18-inch Pair Spoke Black", price: 1276,
+        }
+    ],
+    orderBuilder: {}
 }
 
 export const getPaintColors = () => {
