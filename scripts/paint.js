@@ -5,9 +5,9 @@ const paintColors = getPaintColors();
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "paintChange") {
-            setPaintColor(parseInt(event.target.value))         
-        }  
+        if (event.target.id === "paint") {
+            setPaintColor(parseInt(event.target.value))
+        }
     }
 )
 
@@ -17,10 +17,10 @@ export const Paint = () => {
     html += '<select id="paint">'
     html += '<option value="0">Select Paint Color</option>'
 
-    const arrayofColors = paintColors.map( (paintColor) => {
-            return `<option name="paintChange value="${paintColor.id}">
+    const arrayofColors = paintColors.map((paintColor) => {
+        return `<option value="${paintColor.id}">
             ${paintColor.color}</option>`
-        }
+    }
     )
 
     html += arrayofColors.join(" ")
