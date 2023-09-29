@@ -28,21 +28,23 @@ const buildOrderListItem = (order) => {
         currency: "USD"
     })
 
-    return `<ul>
-    Order #${order.id} cost ${costString}
-    </ul>`
+    return `<p class="orderList">
+    ${foundPaintColor.color} car with ${foundwheel.type} wheels, 
+    ${foundinterior.cloth} interior, and the ${foundtech.pack} for a total
+    cost of ${costString}.
+    </p>`
 }
 
 
 export const Orders = () => {
     const orders = getOrders()
 
-    let html = "<ul>"
+    let html = "<div>"
 
     const listItems = orders.map(buildOrderListItem)
 
     html += listItems.join("")
-    html += "</ul>"
+    html += "</div>"
 
     return html
 }
