@@ -1,9 +1,10 @@
-import { getOrders, getPaintColors, getInteriors, getWheels, getTechs } from "./database.js"
+import { getOrders, getPaintColors, getInteriors, getWheels, getTechs, getCars } from "./database.js"
 
 const paintColors = getPaintColors()
 const interiors = getInteriors()
 const wheels = getWheels()
 const techs = getTechs()
+const cars = getCars()
 
 
 const buildOrderListItem = (order) => {
@@ -20,8 +21,12 @@ const buildOrderListItem = (order) => {
     const foundtech = techs.find(
         (tech) => tech.id === order.techId
     )
+    const foundCars = cars.find(
+        (cars) => cars.id === order.carsId
+    )
 
-    const totalCost = foundPaintColor.price + foundinterior.price + foundwheel.price + foundtech.price
+    const detailCost = foundPaintColor.price + foundinterior.price + foundwheel.price + foundtech.price
+    const totalCost = detailCost * foundCars.price
 
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
@@ -29,7 +34,7 @@ const buildOrderListItem = (order) => {
     })
 
     return `<p class="orderList">
-    ${foundPaintColor.color} car with ${foundwheel.type} wheels, 
+    ${foundPaintColor.color} ${foundCars.type} with ${foundwheel.type} wheels, 
     ${foundinterior.cloth} interior, and the ${foundtech.pack} for a total
     cost of ${costString}.
     </p>`

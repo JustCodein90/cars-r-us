@@ -2,6 +2,7 @@ import { Paint } from "./paint.js";
 import { Interior } from "./interiors.js";
 import { Technologies } from "./tech.js";
 import { Wheel } from "./wheels.js";
+import { Cars } from "./cars.js";
 import { Orders } from "./order.js";
 import { addCustomOrder } from "./database.js";
 
@@ -32,6 +33,12 @@ export const CarHTML = () => {
         <section class="wheelBox">           
             ${Wheel()}
         </section>
+    </article>
+
+    <article class="carChoices">
+        
+        ${Cars()}
+        
     </article>
 
     <article>
