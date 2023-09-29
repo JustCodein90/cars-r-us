@@ -34,30 +34,33 @@ const database = {
         { id: 4, type: "18-inch Pair Spoke Black", price: 1276 }
 
     ],
-    customOrders: 
-    [
-        {
-            id: 1,
-            paintColorId: 3,
-            interiorId: 4,
-            techId: 1,
-            wheelsId: 2
-        }
-    ],
+    customOrders:
+        [
+            {
+                id: 1,
+                paintColorId: 3,
+                interiorId: 4,
+                techId: 1,
+                wheelsId: 2
+            }
+        ],
     orderBuilder: {}
 }
 
 export const getPaintColors = () => {
     return database.paintColor.map(paintColor => ({ ...paintColor }))
 }
-export const getInterior = () => {
+export const getInteriors = () => {
     return database.interior.map(interior => ({ ...interior }))
 }
-export const gettech = () => {
+export const getTechs = () => {
     return database.tech.map(tech => ({ ...tech }))
 }
-export const getwheels = () => {
+export const getWheels = () => {
     return database.wheels.map(wheels => ({ ...wheels }))
+}
+export const getOrders = () => {
+    return database.customOrders.map(customOrders => ({ ...customOrders }))
 }
 
 
@@ -74,7 +77,7 @@ export const setInterior = (id) => {
 export const setTech = (id) => {
     database.orderBuilder.techId = id
 }
-export const setWheels = (id) => {
+export const setWheel = (id) => {
     database.orderBuilder.wheelsId = id
 }
 
