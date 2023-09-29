@@ -1,13 +1,13 @@
-import { getwheels, setWheels } from "./database.js";
+import { getWheels, setWheel } from "./database.js";
 
-const wheels = getwheels()
+const wheels = getWheels()
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "wheelChange") {
-            setWheels(parseInt(event.target.value))          
-        }  
+        if (event.target.id === "wheel") {
+            setWheel(parseInt(event.target.value))
+        }
     }
 )
 
@@ -17,9 +17,9 @@ export const Wheel = () => {
     html += '<select id="wheel">'
     html += '<option value="0">Select a Wheel</option>'
 
-    const arrayOfWheel = wheels.map( (wheel) => {
-        return `<option name="wheelChange" value="${wheel.id}">${wheel.type}</option>`
-        }
+    const arrayOfWheel = wheels.map((wheel) => {
+        return `<option value="${wheel.id}">${wheel.type}</option>`
+    }
     )
 
     html += arrayOfWheel.join("")

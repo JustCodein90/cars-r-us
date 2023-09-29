@@ -1,13 +1,13 @@
-import { getInterior, setInterior } from "./database.js";
+import { getInteriors, setInterior } from "./database.js";
 
-const interiors = getInterior()
+const interiors = getInteriors()
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "clothChange") {
-            setInterior(parseInt(event.target.value))          
-        }        
+        if (event.target.id === "cloth") {
+            setInterior(parseInt(event.target.value))
+        }
     }
 )
 
@@ -17,12 +17,12 @@ export const Interior = () => {
     html += '<select id="cloth">'
     html += '<option value="0">Select a Interior</option>'
 
-    const arrayOfInterior = interiors.map( (interior) => {
-        return `<option name="clothChange" value="${interior.id}">${interior.cloth}</option>`
-        }
+    const arrayOfInterior = interiors.map((interior) => {
+        return `<option value="${interior.id}">${interior.cloth}</option>`
+    }
     )
 
     html += arrayOfInterior.join("")
     html += "</select>"
-    return html    
+    return html
 }
