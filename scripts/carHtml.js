@@ -17,19 +17,19 @@ document.addEventListener(
 
 export const CarHTML = () => {
     return `
-    <h1>Cars 'R  Us</h1>
+    <h1>Cars 'R Us: Personal Car Builder</h1>
 
     <article class="choices">
-        <section class="">           
+        <section class="paintBox">           
             ${Paint()}
         </section>
-        <section class="">           
+        <section class="interiorBox">           
             ${Interior()}
         </section>
-        <section class="">           
+        <section class="techBox">           
             ${Technologies()}
         </section>
-        <section class="">           
+        <section class="wheelBox">           
             ${Wheel()}
         </section>
     </article>
