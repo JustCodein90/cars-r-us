@@ -12,7 +12,7 @@ document.addEventListener(
 )
 
 export const Technologies = () => {
-    let html = "<h2>Tecnologies</h2>"
+    let html = "<h2>Technologies</h2>"
 
     html += '<select id="tech">'
     html += '<option value="0">Select a technology package</options>'
